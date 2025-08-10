@@ -15,5 +15,9 @@ Route::get('/notes', function () {
     return Inertia::render('notes/Notes');
 })->name('notes');
 
+//Route::post('/notes', function () {
+//    return Inertia::render('notes/CreateNote');
+//})->name('create-note');
+
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';

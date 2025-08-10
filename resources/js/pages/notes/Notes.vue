@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import AppLayout from '@/layouts/AppLayout.vue';
 import { type BreadcrumbItem } from '@/types';
-import { Head } from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -15,16 +15,32 @@ const breadcrumbs: BreadcrumbItem[] = [
     <Head title="Notes" />
 
     <AppLayout :breadcrumbs="breadcrumbs">
-        <h1>Manage your notes smartly</h1>
+        <div class="relative h-screen">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0">
+                <div class="absolute h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            </div>
+            <!-- Hero Content -->
+            <div class="relative z-10 flex h-full flex-col items-center justify-center px-4">
+                <div class="max-w-3xl text-center">
+                    <h1 class="mb-8 text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-slate-900">
+                        Start managing your
+                        <span class="text-sky-900">Notes</span>
+                    </h1>
+                    <p class="mx-auto mb-8 max-w-2xl text-lg text-slate-700">
+                        Note taking has never been so easily token care of! From creating, editing, reviewing to deleting, SmartNote has your back.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <Link :href="route('notes')" class="rounded-lg px-6 py-3 font-medium bg-sky-900 text-white hover:bg-sky-800">
+                            Create
+                        </Link>
+                        <Link :href="route('notes')" class="rounded-lg border px-6 py-3 font-medium border-slate-200 bg-white text-slate-900 hover:bg-slate-50">
+                            View
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <section>
-            <h2>create a note</h2>
-        </section>
-        <section>
-            <h2>review your notes</h2>
-        </section>
-        <section>
-            <h2>delete a note</h2>
-        </section>
     </AppLayout>
 </template>
