@@ -31,11 +31,12 @@ const breadcrumbs: BreadcrumbItem[] = [
                         Note taking has never been so easily token care of! From creating, editing, reviewing to deleting, SmartNote has your back.
                     </p>
                     <div class="flex flex-wrap justify-center  flex-col gap-y-4 sm:flex-row sm:gap-4">
-                        <Link :href="route('notes')" class="rounded-lg bg-sky-900 px-6 py-3 font-medium text-white hover:bg-sky-800">
+                        <Link :href="route('notes.create')"
+                              class="rounded-lg bg-sky-900 px-6 py-3 font-medium text-white hover:bg-sky-800">
                             Create
                         </Link>
                         <Link
-                            :href="route('notes')"
+                            :href="route('notes.show')"
                             class="rounded-lg border border-slate-200 bg-white px-6 py-3 font-medium text-slate-900 hover:bg-slate-50"
                         >
                             View
